@@ -8,6 +8,7 @@ using NArchitecture.Core.Application.Pipelines.Authorization;
 using NArchitecture.Core.Application.Pipelines.Caching;
 using NArchitecture.Core.Application.Pipelines.Logging;
 using NArchitecture.Core.Application.Pipelines.Transaction;
+using NArchitecture.Core.Security.Hashing;
 using static Application.Features.Applicants.Constants.ApplicantsOperationClaims;
 
 namespace Application.Features.Applicants.Commands.Create;
@@ -19,6 +20,9 @@ public class CreateApplicantCommand
         ILoggableRequest,
         ITransactionalRequest
 {
+    public string UserName { get; set; }
+    public DateTime DateOfBirth { get; set; }
+    public string NationalIdentity { get; set; }
     public string About { get; set; }
 
     public string[] Roles => [Admin, Write, ApplicantsOperationClaims.Create];

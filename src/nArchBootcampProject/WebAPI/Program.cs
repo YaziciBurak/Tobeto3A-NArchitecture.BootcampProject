@@ -62,7 +62,7 @@ builder.Services.AddCors(opt =>
         p.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
     })
 );
-builder.Services.AddSwaggerGen(opt =>
+ builder.Services.AddSwaggerGen(opt =>
 {
     opt.AddSecurityDefinition(
         name: "Bearer",
@@ -99,16 +99,17 @@ if (app.Environment.IsProduction())
 app.UseDbMigrationApplier();
 
 app.UseAuthentication();
-app.UseAuthorization();
-
 app.MapControllers();
 
 const string webApiConfigurationSection = "WebAPIConfiguration";
 WebApiConfiguration webApiConfiguration =
     app.Configuration.GetSection(webApiConfigurationSection).Get<WebApiConfiguration>()
     ?? throw new InvalidOperationException($"\"{webApiConfigurationSection}\" section cannot found in configuration.");
-app.UseCors(opt => opt.WithOrigins(webApiConfiguration.AllowedOrigins).AllowAnyHeader().AllowAnyMethod().AllowCredentials());
+app.UseCors(opt => opt.WithOrigins(webApiConfiguration.AllowedOrigins)
+.WithOrigins("http://localhost:4200/", "http://localhost:5278").
+AllowAnyHeader().AllowAnyMethod().AllowCredentials());
 
+app.UseRouting();
 app.UseResponseLocalization();
 
 app.Run();

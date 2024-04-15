@@ -50,13 +50,13 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             User adminUser =
                 new()
                 {
-                    UserName = "admin",
+                    UserName = "kletho",
                     FirstName = "Burak",
                     LastName = "Yazici",
                     NationalIdentity = "1234",
                     DateOfBirth = DateTime.Now,
                     Id = AdminId,
-                    Email = "narch@kodlama.io",
+                    Email = "burak@mail",
                     PasswordHash = passwordHash,
                     PasswordSalt = passwordSalt
                 };

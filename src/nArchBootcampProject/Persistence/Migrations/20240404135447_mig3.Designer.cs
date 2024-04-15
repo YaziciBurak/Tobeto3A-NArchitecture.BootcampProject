@@ -12,8 +12,8 @@ using Persistence.Contexts;
 namespace Persistence.Migrations
 {
     [DbContext(typeof(BaseDbContext))]
-    [Migration("20240324221554_mig15")]
-    partial class mig15
+    [Migration("20240404135447_mig3")]
+    partial class mig3
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -964,17 +964,17 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("47ecf1b9-a57e-46c3-beba-6d1bc92c3a1f"),
+                            Id = new Guid("4444c170-6c79-4f8b-9681-1a915a239623"),
                             AuthenticatorType = 0,
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            DateOfBirth = new DateTime(2024, 3, 25, 1, 15, 53, 748, DateTimeKind.Local).AddTicks(9547),
-                            Email = "narch@kodlama.io",
+                            DateOfBirth = new DateTime(2024, 4, 4, 16, 54, 46, 793, DateTimeKind.Local).AddTicks(2378),
+                            Email = "burak@mail",
                             FirstName = "Burak",
                             LastName = "Yazici",
                             NationalIdentity = "1234",
-                            PasswordHash = new byte[] { 81, 129, 56, 64, 132, 211, 227, 81, 207, 146, 163, 113, 11, 40, 170, 243, 4, 68, 114, 37, 240, 222, 133, 163, 98, 107, 72, 248, 164, 24, 239, 65, 53, 77, 159, 35, 250, 16, 192, 138, 2, 186, 254, 60, 93, 163, 104, 121, 243, 146, 69, 252, 230, 215, 193, 118, 149, 97, 181, 231, 9, 97, 235, 174 },
-                            PasswordSalt = new byte[] { 20, 38, 55, 17, 239, 95, 173, 8, 69, 47, 186, 184, 103, 1, 230, 93, 82, 121, 134, 176, 48, 38, 235, 36, 211, 181, 66, 122, 153, 240, 20, 72, 26, 91, 142, 225, 185, 134, 160, 110, 111, 18, 90, 219, 46, 31, 16, 109, 103, 101, 69, 167, 120, 251, 214, 208, 227, 134, 148, 81, 223, 98, 159, 66, 163, 63, 104, 60, 51, 173, 153, 196, 213, 189, 56, 76, 226, 88, 170, 38, 9, 48, 37, 72, 31, 156, 113, 50, 60, 7, 161, 118, 164, 216, 5, 130, 164, 197, 136, 145, 108, 223, 137, 60, 102, 156, 10, 128, 168, 212, 205, 2, 207, 208, 155, 107, 81, 97, 194, 250, 141, 230, 29, 135, 144, 224, 55, 32 },
-                            UserName = "admin"
+                            PasswordHash = new byte[] { 238, 146, 196, 156, 207, 199, 179, 214, 226, 127, 16, 224, 127, 124, 48, 254, 201, 55, 151, 1, 30, 164, 204, 113, 39, 192, 34, 50, 246, 130, 85, 0, 77, 212, 145, 13, 156, 39, 123, 14, 182, 214, 231, 219, 76, 213, 18, 204, 141, 181, 16, 61, 155, 171, 84, 124, 151, 22, 236, 166, 110, 185, 212, 2 },
+                            PasswordSalt = new byte[] { 41, 185, 75, 31, 128, 142, 254, 207, 177, 178, 6, 14, 97, 64, 154, 107, 20, 51, 105, 83, 53, 203, 242, 175, 35, 130, 176, 124, 226, 109, 29, 234, 118, 222, 189, 180, 101, 1, 1, 126, 220, 223, 48, 109, 115, 58, 158, 164, 223, 149, 102, 21, 101, 8, 234, 204, 126, 116, 234, 140, 102, 196, 15, 51, 115, 146, 196, 173, 53, 99, 219, 205, 83, 102, 167, 152, 242, 77, 173, 80, 180, 103, 184, 99, 236, 87, 80, 14, 203, 27, 119, 215, 85, 171, 97, 222, 240, 65, 90, 47, 147, 159, 180, 165, 107, 148, 81, 139, 119, 20, 185, 197, 37, 164, 118, 83, 173, 155, 65, 170, 193, 219, 127, 205, 46, 150, 17, 116 },
+                            UserName = "kletho"
                         });
                 });
 
@@ -1016,10 +1016,10 @@ namespace Persistence.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e87a75f1-f45a-4ecc-8ed5-02e0bcbe1806"),
+                            Id = new Guid("804b539c-fc80-455e-8d5c-a455718c79e4"),
                             CreatedDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             OperationClaimId = 1,
-                            UserId = new Guid("47ecf1b9-a57e-46c3-beba-6d1bc92c3a1f")
+                            UserId = new Guid("4444c170-6c79-4f8b-9681-1a915a239623")
                         });
                 });
 

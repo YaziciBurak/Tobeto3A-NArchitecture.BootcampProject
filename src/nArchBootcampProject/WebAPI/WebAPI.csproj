@@ -28,5 +28,6 @@
   <ItemGroup>
     <Folder Include="Controllers\Dtos" />
     <Folder Include="logs\" />
+    <Folder Include="wwwroot\" />
   </ItemGroup>
 </Project>
