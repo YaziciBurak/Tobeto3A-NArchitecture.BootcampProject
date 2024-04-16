@@ -4,12 +4,13 @@ using Application.Services.Repositories;
 using AutoMapper;
 using Domain.Entities;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using NArchitecture.Core.Application.Pipelines.Authorization;
 using static Application.Features.Bootcamps.Constants.BootcampsOperationClaims;
 
 namespace Application.Features.Bootcamps.Queries.GetById;
 
-public class GetByIdBootcampQuery : IRequest<GetByIdBootcampResponse>, ISecuredRequest
+public class GetByIdBootcampQuery : IRequest<GetByIdBootcampResponse>//, ISecuredRequest
 {
     public int Id { get; set; }
 
@@ -36,7 +37,8 @@ public class GetByIdBootcampQuery : IRequest<GetByIdBootcampResponse>, ISecuredR
         {
             Bootcamp? bootcamp = await _bootcampRepository.GetAsync(
                 predicate: b => b.Id == request.Id,
-                cancellationToken: cancellationToken
+                cancellationToken: cancellationToken,
+                 include: x => x.Include(p => p.Instructor).Include(p => p.BootcampState).Include(p => p.BootcampImages)
             );
             await _bootcampBusinessRules.BootcampShouldExistWhenSelected(bootcamp);
 
