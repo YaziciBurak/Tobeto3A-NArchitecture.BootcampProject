@@ -26,7 +26,7 @@ public class BootcampImageManager : IBootcampImageService
     {
         BootcampImage bootcampImage = new();
         {
-            bootcampImage.Id = request.Id;
+            bootcampImage.BootcampId = request.BootcampId;
             bootcampImage.ImagePath = request.ImagePath;
         }
         bootcampImage.ImagePath = await _imageServiceBase.UploadAsync(file);

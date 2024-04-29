@@ -56,7 +56,7 @@ public class AuthManager : IAuthService
             userId,
             _tokenOptions.RefreshTokenTTL
         );
-        await _refreshTokenRepository.DeleteRangeAsync(refreshTokens);
+        await _refreshTokenRepository.DeleteRangeAsync(refreshTokens,true);
     }
 
     public async Task<RefreshToken?> GetRefreshTokenByToken(string token)
